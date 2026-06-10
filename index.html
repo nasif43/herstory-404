@@ -15,18 +15,35 @@
             justify-content:center;
             align-items:center;
             min-height:100vh;
-            background:#fff;
+            background: #000;
             width:100%;
-            overflow:auto;
+            overflow:hidden;
+            position:relative;
         }
+        
+        /* Blurry black background effect */
+        body::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            backdrop-filter: blur(20px);
+            z-index:-1;
+        }
+        
         img{
-            width:100%;
-            height:auto;
+            max-height:100vh;
+            width:auto;
             display:block;
+            object-fit:contain;
+            z-index:1;
         }
     </style>
 </head>
 <body>
-    <img src="herstory.jpeg" alt="">
+    <img src="herstory.jpeg" alt="HerStory">
 </body>
 </html>
